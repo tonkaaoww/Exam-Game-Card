@@ -1,0 +1,30 @@
+
+@keyframes matchedPulse {
+    0% {
+      transform: scale(1) rotateY(180deg);
+    }
+    50% {
+      transform: scale(1.1) rotateY(180deg);
+    }
+    100% {
+      transform: scale(1) rotateY(180deg);
+    }
+  }
+  
+  // สำหรับ card flip
+  .card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    transform: rotateY(0deg);
+  
+    &.flipped,
+    &.matched {
+      transform: rotateY(180deg);
+    }
+  
+    &.matched {
+      animation: matchedPulse 0.3s ease-in-out;
+      animation-delay: 0.5s;
+    }
+  }
+  
